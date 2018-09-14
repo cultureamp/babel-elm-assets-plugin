@@ -7,6 +7,11 @@
   "private": true,
   "scripts": {},
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/traverse": "^7.0.0",
+    "@types/babel__core": "^7.0.1",
+    "@types/babel__traverse": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "typescript": "^3.0.3"
   }
 }
