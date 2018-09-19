@@ -5,6 +5,10 @@
   "author": "Louis Quinnell <zioroboco@gmail.com>",
   "license": "MIT",
   "private": true,
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest"
