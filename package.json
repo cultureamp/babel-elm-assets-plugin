@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "git@github.com:zioroboco/babel-plugin-foundry.git",
   "author": "Louis Quinnell <zioroboco@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "tsc",
