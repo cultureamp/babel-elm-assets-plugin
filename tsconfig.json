@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "target": "es6",
     "module": "commonjs"
-  }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
 }
