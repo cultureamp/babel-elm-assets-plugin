@@ -23,7 +23,7 @@ const defaultPluginOptions: PluginOptions = {
 const makePlugin = (options: PluginOptions): PluginObj => {
   /** An append-only list of error descriptions. */
   const errors: string[] = [];
-  const name = "elm-assets-babel-plugin";
+  const name = "babel-elm-assets-plugin";
 
   return {
     name,

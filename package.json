@@ -1,8 +1,8 @@
 {
-  "name": "babel-plugin-foundry",
-  "version": "1.0.0",
-  "repository": "git@github.com:zioroboco/babel-plugin-foundry.git",
-  "author": "Louis Quinnell <zioroboco@gmail.com>",
+  "name": "babel-elm-assets-plugin",
+  "version": "0.1.0",
+  "repository": "git@github.com:cultureamp/babel-elm-assets-plugin.git",
+  "author": "Jason O'Neil <jason.oneil@gmail.com>",
   "license": "MIT",
   "private": true,
   "main": "lib/index.js",
