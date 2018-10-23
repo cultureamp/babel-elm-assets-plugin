@@ -4,7 +4,6 @@
   "repository": "git@github.com:cultureamp/babel-elm-assets-plugin.git",
   "author": "Jason O'Neil <jason.oneil@gmail.com>",
   "license": "MIT",
-  "private": true,
   "main": "lib/index.js",
   "files": [
     "lib"
