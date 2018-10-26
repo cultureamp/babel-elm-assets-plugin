@@ -1,9 +1,11 @@
 import { PluginObj } from "@babel/core";
 import {
+  callExpression,
   CallExpression,
   isIdentifier,
   isStringLiteral,
-  identifier
+  identifier,
+  memberExpression
 } from "@babel/types";
 
 type PluginOptions = {
@@ -20,7 +22,7 @@ const defaultPluginOptions: PluginOptions = {
   function: "assetUrl"
 };
 
-const makePlugin = (options: PluginOptions): PluginObj => {
+const plugin = ({}): PluginObj => {
   /** An append-only list of error descriptions. */
   const errors: string[] = [];
   const name = "babel-elm-assets-plugin";
@@ -34,17 +36,20 @@ const makePlugin = (options: PluginOptions): PluginObj => {
       }
     },
     visitor: {
-      CallExpression: ({ node }) => {
-        if (!isAssetExpression(node, options)) return;
+      CallExpression: (path, { opts }) => {
+        if (!isAssetExpression(path.node, opts)) return;
 
-        node.callee = identifier("require");
+        const [filePathNode] = path.node.arguments;
 
-        const [filePathNode] = node.arguments;
+        path.replaceWith(
+          memberExpression(
+            callExpression(identifier("require"), path.node.arguments),
+            identifier("default")
+          )
+        );
 
         if (!isStringLiteral(filePathNode)) {
-          const name = `${options.module}.${options.function} (from ${
-            options.package
-          })`;
+          const name = `${opts.module}.${opts.function} (from ${opts.package})`;
           errors.push(
             `When using ${name} you must provide the asset path as a constant string`
           );
@@ -72,6 +77,6 @@ const isAssetExpression = (
   );
 };
 
-export default makePlugin(defaultPluginOptions);
+export default plugin;
 
-export { makePlugin as withOptions, defaultPluginOptions, PluginOptions };
+export { defaultPluginOptions, PluginOptions };
