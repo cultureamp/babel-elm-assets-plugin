@@ -3,5 +3,5 @@ var author$project$Asset$require = function (url) {
 };
 
 var author$project$Main$initialModel = {
-  file: require("./file.png")
+  file: require("./file.png").default
 };

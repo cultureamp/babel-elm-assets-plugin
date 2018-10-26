@@ -37,7 +37,8 @@ const plugin = ({}): PluginObj => {
     },
     visitor: {
       CallExpression: (path, { opts }) => {
-        if (!isAssetExpression(path.node, opts)) return;
+        const options = { ...defaultPluginOptions, ...opts };
+        if (!isAssetExpression(path.node, options)) return;
 
         const [filePathNode] = path.node.arguments;
 
@@ -49,7 +50,9 @@ const plugin = ({}): PluginObj => {
         );
 
         if (!isStringLiteral(filePathNode)) {
-          const name = `${opts.module}.${opts.function} (from ${opts.package})`;
+          const name = `${options.module}.${options.function} (from ${
+            options.package
+          })`;
           errors.push(
             `When using ${name} you must provide the asset path as a constant string`
           );
