@@ -63,3 +63,7 @@ var author$project$MyProject$Asset$url = function(url) {
 };
 var author$project$Main$myImageUrl = "/assets/file-0fabe3.png";
 ```
+
+---
+
+The babel-elm-assets-plugin is maintained by the Front End Capability Team at Culture Amp.
