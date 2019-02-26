@@ -4,9 +4,6 @@
   "summary": "Use Webpack-powered asset loading inside your Elm views",
   "license": "MIT",
   "version": "1.0.0",
-  "source-directories": [
-    "src-elm"
-  ],
   "exposed-modules": ["WebpackAsset"],
   "elm-version": "0.19.0 <= v < 0.20.0",
   "dependencies": {
