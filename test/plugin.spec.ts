@@ -14,7 +14,7 @@ const transformWith = (plugin: ({}) => PluginObj, options?: PluginOptions) => (
   return transformSync(input, { plugins: [assetPlugin] }).code;
 };
 
-describe("the Elm CSS modules plugin", () => {
+describe("the plugin", () => {
   it("transforms input to the expected output", () => {
     const transform = transformWith(plugin);
     const input = fixture("input.js");
@@ -33,11 +33,17 @@ describe("the Elm CSS modules plugin", () => {
     expect(transform(input)).toBe(expectedOutput);
   });
 
+  it("transforms a fully compiled optimized build", () => {
+    const transform = transformWith(plugin);
+    const input = fixture("optimized_build_input.js");
+    expect(transform(input)).toMatchSnapshot();
+  });
+
   it("will error if you use a non-literal string for the asset path", () => {
     const transform = transformWith(plugin);
     const input = fixture("variable_input.js");
     const expectedError =
-      "When using Asset.assetUrl (from author/project) you must provide the asset path as a constant string";
+      "When using WebpackAsset.assetUrl (from cultureamp/babel-elm-assets-plugin) you must provide the asset path as a constant string";
     expect(() => transform(input)).toThrow(expectedError);
   });
 });
