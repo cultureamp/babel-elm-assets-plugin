@@ -15,8 +15,6 @@ type PluginOptions = {
   function: string;
 };
 
-// TODO: we should probably provide an Elm package that offers this by default.
-// NoRedInk/elm-asset-path comes close but uses an opaque type rather than allowing type aliases.
 const defaultPluginOptions: PluginOptions = {
   package: "cultureamp/babel-elm-assets-plugin",
   module: "WebpackAsset",
