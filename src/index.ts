@@ -5,7 +5,8 @@ import {
   isIdentifier,
   isStringLiteral,
   identifier,
-  memberExpression
+  memberExpression,
+  conditionalExpression
 } from "@babel/types";
 
 type PluginOptions = {
@@ -42,12 +43,20 @@ const plugin = ({}): PluginObj => {
 
         const [filePathNode] = path.node.arguments;
 
-        path.replaceWith(
-          memberExpression(
-            callExpression(identifier("require"), path.node.arguments),
-            identifier("default")
-          )
-        );
+
+        // We need either `require('file.png').default` or just `require('file.png')` depending on the webpack loader
+        // So we use `require('file.png').__esModule ? require('file.png').default : require('file.png')`
+        const requireExpr = callExpression(identifier("require"), path.node.arguments)
+        const requireDotEsModule = memberExpression(
+          requireExpr,
+          identifier("__esModule")
+        )
+        const requireDotDefault = memberExpression(
+          requireExpr,
+          identifier("default")
+        )
+        const conditionalRequire = conditionalExpression(requireDotEsModule, requireDotDefault, requireExpr)
+        path.replaceWith(conditionalRequire);
 
         if (!isStringLiteral(filePathNode)) {
           const name = `${options.module}.${options.function} (from ${

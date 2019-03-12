@@ -6,5 +6,5 @@ var cultureamp$cultureamp_style_guide$Icon$SvgAsset$svgAsset = function (url) {
 };
 
 var author$project$Main$initialModel = {
-  svg: require("./file.svg").default
+  svg: require("./file.svg").__esModule ? require("./file.svg").default : require("./file.svg")
 };

@@ -3752,7 +3752,7 @@ exports[`the plugin transforms a fully compiled optimized build 1`] = `
     return path;
   };
 
-  var author$project$AssetLoaderExample$exampleSvgUrl = require('./ca-monogram.svg').default;
+  var author$project$AssetLoaderExample$exampleSvgUrl = require('./ca-monogram.svg').__esModule ? require('./ca-monogram.svg').default : require('./ca-monogram.svg');
 
   var elm$core$Basics$identity = function (x) {
     return x;
