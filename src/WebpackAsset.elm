@@ -2,8 +2,10 @@ module WebpackAsset exposing (AssetUrl, assetUrl)
 
 {-| This library lets you reference webpack assets in your Elm views,
 and have them replaced with require() statements (and eventually, the URLs
-of the assets) at compile time. Designed to be used with the corresponding
-Babel plugin.
+of the assets) at compile time.
+
+Designed to be used with the corresponding babel-elm-assets-plugin.
+See https://github.com/cultureamp/babel-elm-assets-plugin
 
 @docs AssetUrl
 @docs assetUrl
