@@ -82,8 +82,10 @@ const isAssetExpression = (
     options.module.replace(/\./g, "$"),
     options.function
   ].join("$");
-  return (
-    isIdentifier(expression.callee) && expression.callee.name === taggerName
+  return ["", "_"].some(
+    prefix =>
+      isIdentifier(expression.callee) &&
+      expression.callee.name === prefix + taggerName
   );
 };
 
