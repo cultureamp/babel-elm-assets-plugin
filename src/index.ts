@@ -23,11 +23,14 @@ const defaultPluginOptions: PluginOptions = {
 
 const plugin = ({}): PluginObj => {
   /** An append-only list of error descriptions. */
-  const errors: string[] = [];
+  let errors: string[] = [];
   const name = "babel-elm-assets-plugin";
 
   return {
     name,
+    pre: () => {
+      errors = []
+    },
     post: () => {
       if (errors.length > 0) {
         // report errors and throw
