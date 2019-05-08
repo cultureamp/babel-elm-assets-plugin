@@ -46,4 +46,10 @@ describe("the plugin", () => {
       "When using WebpackAsset.assetUrl (from cultureamp/babel-elm-assets-plugin) you must provide the asset path as a constant string";
     expect(() => transform(input)).toThrow(expectedError);
   });
+
+  it("works with Elm 0.18 generated code", () => {
+    const transform = transformWith(plugin)
+    const input = fixture("elm18_input.js");
+    expect(transform(input)).toMatchSnapshot()
+  });
 });

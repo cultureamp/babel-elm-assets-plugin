@@ -23,11 +23,14 @@ const defaultPluginOptions: PluginOptions = {
 
 const plugin = ({}): PluginObj => {
   /** An append-only list of error descriptions. */
-  const errors: string[] = [];
+  let errors: string[] = [];
   const name = "babel-elm-assets-plugin";
 
   return {
     name,
+    pre: () => {
+      errors = []
+    },
     post: () => {
       if (errors.length > 0) {
         // report errors and throw
@@ -82,8 +85,10 @@ const isAssetExpression = (
     options.module.replace(/\./g, "$"),
     options.function
   ].join("$");
-  return (
-    isIdentifier(expression.callee) && expression.callee.name === taggerName
+  return ["", "_"].some(
+    prefix =>
+      isIdentifier(expression.callee) &&
+      expression.callee.name === prefix + taggerName
   );
 };
 

@@ -4494,3 +4494,5 @@ exports[`the plugin transforms a fully compiled optimized build 1`] = `
   });
 })(this);"
 `;
+
+exports[`the plugin works with Elm 0.18 generated code 1`] = `"require('ca-assets/images/illustrations/dashboard.svg').__esModule ? require('ca-assets/images/illustrations/dashboard.svg').default : require('ca-assets/images/illustrations/dashboard.svg');"`;
