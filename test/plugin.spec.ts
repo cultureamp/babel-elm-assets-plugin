@@ -52,4 +52,14 @@ describe("the plugin", () => {
     const input = fixture("elm18_input.js");
     expect(transform(input)).toMatchSnapshot()
   });
+
+  it("custom options work with Elm 0.18", () => {
+    const transform = transformWith(plugin, {
+      package: "user/project",
+      module: "Icon.SvgAsset",
+      function: "svgAsset"
+    });
+    const input = fixture("elm18_module_path_input.js");
+    expect(transform(input)).toMatchSnapshot()
+  });
 });
