@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`the plugin custom options work with Elm 0.18 1`] = `"require('@cultureamp/kaizen-component-library/icons/academy.svg').__esModule ? require('@cultureamp/kaizen-component-library/icons/academy.svg').default : require('@cultureamp/kaizen-component-library/icons/academy.svg');"`;
+
 exports[`the plugin transforms a fully compiled optimized build 1`] = `
 "(function (scope) {
   'use strict';

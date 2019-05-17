@@ -80,16 +80,17 @@ const isAssetExpression = (
   expression: CallExpression,
   options: PluginOptions
 ) => {
-  const taggerName = [
+  const elm18TaggerName = [
+    "_" + options.package.replace(/-/g, "_").replace(/\//g, "$"),
+    options.module.replace(/\./g, "_"),
+    options.function
+  ].join("$")
+  const elm19TaggerName = [
     options.package.replace(/-/g, "_").replace(/\//g, "$"),
     options.module.replace(/\./g, "$"),
     options.function
   ].join("$");
-  return ["", "_"].some(
-    prefix =>
-      isIdentifier(expression.callee) &&
-      expression.callee.name === prefix + taggerName
-  );
+  return isIdentifier(expression.callee) && (expression.callee.name == elm18TaggerName || expression.callee.name == elm19TaggerName)
 };
 
 export default plugin;
