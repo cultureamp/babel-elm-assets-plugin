@@ -1,6 +1,6 @@
 {
   "name": "babel-elm-assets-plugin",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "repository": "git@github.com:cultureamp/babel-elm-assets-plugin.git",
   "author": "Jason O'Neil <jason.oneil@gmail.com>",
   "license": "MIT",
