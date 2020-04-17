@@ -90,7 +90,17 @@ const isAssetExpression = (
     options.module.replace(/\./g, "$"),
     options.function
   ].join("$");
-  return isIdentifier(expression.callee) && (expression.callee.name == elm18TaggerName || expression.callee.name == elm19TaggerName)
+  const elm191TaggerName = [
+    '',
+    options.package.replace(/-/g, "_").replace(/\//g, "$"),
+    options.module.replace(/\./g, "$"),
+    options.function
+  ].join("$");
+  return isIdentifier(expression.callee) && (
+    expression.callee.name == elm18TaggerName ||
+    expression.callee.name == elm19TaggerName ||
+    expression.callee.name == elm191TaggerName
+  )
 };
 
 export default plugin;
