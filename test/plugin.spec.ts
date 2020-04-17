@@ -53,6 +53,12 @@ describe("the plugin", () => {
     expect(transform(input)).toMatchSnapshot()
   });
 
+  it("works with Elm 0.19.0 generated code", () => {
+    const transform = transformWith(plugin)
+    const input = fixture("elm19.0_input.js");
+    expect(transform(input)).toMatchSnapshot()
+  });
+
   it("custom options work with Elm 0.18", () => {
     const transform = transformWith(plugin, {
       package: "user/project",

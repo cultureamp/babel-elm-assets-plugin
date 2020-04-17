@@ -144,10 +144,10 @@ image =
 Normally when you compile this with Elm, the generated JS will look like:
 
 ```js
-var cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
+var $cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
   return path;
 };
-var author$project$Main$imageUrl = cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl(
+var author$project$Main$imageUrl = $cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl(
   "./lost.png"
 );
 ```
@@ -155,7 +155,7 @@ var author$project$Main$imageUrl = cultureamp$babel_elm_assets_plugin$WebpackAss
 Now our Babel plugin can transform that JS to use a require call:
 
 ```js
-var cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
+var $cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
   return path;
 };
 var author$project$Main$imageUrl = require("./lost.png");
@@ -164,7 +164,7 @@ var author$project$Main$imageUrl = require("./lost.png");
 Which webpack will know how to handle, meaning your final JS will do something similar to:
 
 ```js
-var cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
+var $cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
   return path;
 };
 var author$project$Main$myImageUrl = "/assets/lost-0fabe3.png";
