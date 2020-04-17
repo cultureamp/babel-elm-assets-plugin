@@ -4498,3 +4498,11 @@ exports[`the plugin transforms a fully compiled optimized build 1`] = `
 `;
 
 exports[`the plugin works with Elm 0.18 generated code 1`] = `"require('ca-assets/images/illustrations/dashboard.svg').__esModule ? require('ca-assets/images/illustrations/dashboard.svg').default : require('ca-assets/images/illustrations/dashboard.svg');"`;
+
+exports[`the plugin works with Elm 0.19.0 generated code 1`] = `
+"var cultureamp$babel_elm_assets_plugin$WebpackAsset$assetUrl = function (path) {
+  return path;
+};
+
+var author$project$AssetLoaderExample$exampleSvgUrl = require('./ca-monogram.svg').__esModule ? require('./ca-monogram.svg').default : require('./ca-monogram.svg');"
+`;
