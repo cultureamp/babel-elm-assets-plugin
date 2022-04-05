@@ -10,8 +10,8 @@ metadata:
     - data-none
   annotations:
     github.com/project-slug: cultureamp/babel-elm-assets-plugin
-    github.com/team-slug: cultureamp/front-end-foundatiions
+    github.com/team-slug: cultureamp/front-end-foundations
 spec:
   type: library
-  owner: front-end-foundatiions
+  owner: front-end-foundations
   lifecycle: production
