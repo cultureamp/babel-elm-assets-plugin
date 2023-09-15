@@ -3,15 +3,16 @@ kind: Component
 metadata:
   name: babel-elm-assets-plugin
   description: >
-    This Babel plugin allows you to search for a particular function call in Elm, and replace it with a require() JS call. This allows you to use webpack generated assets directly in your Elm code.
+    This Babel plugin allows you to search for a particular function call in Elm, and replace it with a require() JS
+    call. This allows you to use webpack generated assets directly in your Elm code.
   tags:
-    - users-na
-    - camp-foundations
+    - camp-developer-experience
     - data-none
+    - users-na
   annotations:
     github.com/project-slug: cultureamp/babel-elm-assets-plugin
-    github.com/team-slug: cultureamp/front-end-foundations
+    github.com/team-slug: cultureamp/delivery-engineering
 spec:
   type: library
-  owner: front-end-foundations
+  owner: delivery-engineering
   lifecycle: production
