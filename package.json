@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
-    "@babel/traverse": "^7.0.0"
+    "@babel/traverse": "^7.23.2"
   }
 }
