@@ -119,6 +119,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@snyk/protect@^1.1269.0":
+  version "1.1269.0"
+  resolved "https://registry.yarnpkg.com/@snyk/protect/-/protect-1.1269.0.tgz#12d0279e42594ad94826d20a0b48a6976cab39a8"
+  integrity sha512-2sBAjL8NC4+N6AJU06cpAR+6Uu0pTB7K4Cho7W0kF6K0dfXrikJ1EFQ/Q5OOlJZCW+oUuuf9xFr4bSreLXU4Wg==
+
 "@types/babel__core@^7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.0.1.tgz#8b608a1c55cb4c752352cc6c78f7beb61a3fd51f"

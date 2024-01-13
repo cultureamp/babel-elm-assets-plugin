@@ -1,0 +1,10 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@babel/traverse > lodash':
+        patched: '2024-01-13T22:07:05.943Z'
+        id: SNYK-JS-LODASH-567746
+        path: '@babel/traverse > lodash'

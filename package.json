@@ -11,7 +11,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepublish": "yarn build && yarn test"
+    "prepublish": "yarn run snyk-protect && yarn build && yarn test",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@types/babel__core": "^7.0.1",
@@ -26,6 +27,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
-    "@babel/traverse": "^7.0.0"
-  }
+    "@babel/traverse": "^7.0.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
