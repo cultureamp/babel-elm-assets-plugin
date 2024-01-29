@@ -4,7 +4,6 @@ var cultureamp$cultureamp_style_guide$Icon$SvgAsset$svgAsset = function (url) {
     viewBox: "0 0 0 0"
   };
 };
-
 var author$project$Main$initialModel = {
   svg: require("./file.svg").__esModule ? require("./file.svg").default : require("./file.svg")
 };
